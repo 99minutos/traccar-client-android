@@ -50,7 +50,7 @@ public class TrackingController implements PositionProvider.PositionListener, Ne
         isOnline = networkManager.isOnline();
 
         url = preferences.getString(MainFragment.KEY_URL, context.getString(R.string.settings_url_default_value));
-        buffer = preferences.getBoolean(MainFragment.KEY_BUFFER, true);
+        buffer = preferences.getBoolean(MainFragment.KEY_BUFFER, false);
     }
 
     public void start() {

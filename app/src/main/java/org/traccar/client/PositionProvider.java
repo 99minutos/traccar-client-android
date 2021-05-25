@@ -28,7 +28,7 @@ public abstract class PositionProvider {
 
     private static final String TAG = PositionProvider.class.getSimpleName();
 
-    protected static final int MINIMUM_INTERVAL = 1000;
+    protected static final int MINIMUM_INTERVAL = 2000;
 
     public interface PositionListener {
         void onPositionUpdate(Position position);
@@ -54,7 +54,7 @@ public abstract class PositionProvider {
         preferences = PreferenceManager.getDefaultSharedPreferences(context);
 
         deviceId = preferences.getString(MainFragment.KEY_DEVICE, "undefined");
-        interval = Long.parseLong(preferences.getString(MainFragment.KEY_INTERVAL, "600")) * 1000;
+        interval = Long.parseLong(preferences.getString(MainFragment.KEY_INTERVAL, "10")) * 1000;
         distance = Integer.parseInt(preferences.getString(MainFragment.KEY_DISTANCE, "0"));
         angle = Integer.parseInt(preferences.getString(MainFragment.KEY_ANGLE, "0"));
     }
